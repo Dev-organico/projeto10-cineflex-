@@ -31,7 +31,7 @@ export default function MoviesPage() {
             <Movies>
                 {movies.map(el => (
                     <Movie key={el.id} data-test="movie">
-                        <Link to={`/selectedMoviePage/${el.id}`}>
+                        <Link to={`/sessoes/${el.id}`}>
                             <img src={el.posterURL} alt={el.title} />
                         </Link>
                     </Movie>

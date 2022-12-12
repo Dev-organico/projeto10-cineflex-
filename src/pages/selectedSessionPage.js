@@ -34,7 +34,7 @@ export default function SelectedSessionPage({ selectedSeats, handleSeat, nome, s
         }
         const request = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", obj)
 
-		request.then(() => navigate("/successPage"))
+		request.then(() => navigate("/sucesso"))
         request.catch((i)=> alert(i.data))
 
         

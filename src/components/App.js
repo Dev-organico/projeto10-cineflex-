@@ -39,9 +39,9 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<MoviesPage />} /> 
-        <Route path="/selectedMoviePage/:movieId" element={<SelectedMoviePage/>}/>
+        <Route path="/sessoes/:movieId" element={<SelectedMoviePage/>}/>
         <Route 
-        path="/selectedSessionPage/:showtimesId" 
+        path="/assentos/:showtimesId" 
         element={<SelectedSessionPage 
         selectedSeats = {selectedSeats}
         handleSeat = {handleSeat}
@@ -57,7 +57,7 @@ function App() {
         setMovieTime = {setMovieTime}
         />} 
         />
-        <Route path="/successPage" element={<SuccessPage
+        <Route path="/sucesso" element={<SuccessPage
         seatsName = {seatsName}
         movieTitle = {movieTitle}
         movieDay = {movieDay}
