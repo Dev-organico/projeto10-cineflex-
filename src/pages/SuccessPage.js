@@ -20,25 +20,25 @@ export default function SuccessPage({setSelectedSeats,seatsName,movieTitle ,movi
                 <p>Pedido feito</p>
                 <p>com sucesso!</p>
             </Title>
-            <Movie>
+            <Movie data-test="movie-info">
                 <p> Filmes e sessão </p>
                 <h1>{movieTitle}<br/>{movieDay} {movieTime}</h1>
             </Movie>
             <Tickets>
                 <p>Ingressos</p>
-                <Ticket>
+                <Ticket  data-test="seats-info">
                 {seatsName.map(i => (
                     <h1>Assento {i}</h1>
                 ))}
                 </Ticket>
             </Tickets>
-            <Buyer>
+            <Buyer data-test="client-info">
                 <p>Comprador</p>
                 <h1>Nome: {nome}<br/>
                 Cpf: {cpf}</h1>
             </Buyer>
             
-            <button onClick={clear}>Volte para home</button>
+            <button data-test="go-home-btn" onClick={clear}>Volte para home</button>
             
             
 

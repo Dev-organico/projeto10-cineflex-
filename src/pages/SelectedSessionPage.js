@@ -62,14 +62,14 @@ export default function SelectedSessionPage({ selectedSeats, handleSeat, nome, s
                     if (el.isAvailable === true) {
                         if (!selectedSeats.includes(el)) {
                             return (
-                                <Seat onClick={() => handleSeat(el)} key={el.id}>
+                                <Seat data-test="seat" onClick={() => handleSeat(el)} key={el.id}>
                                     {el.name}
                                 </Seat>
                             )
                         }
                         else {
                             return (
-                                <SeSeat onClick={() => handleSeat(el)} key={el.id}>
+                                <SeSeat data-test="seat" onClick={() => handleSeat(el)} key={el.id}>
                                     {el.name}
                                 </SeSeat>
 
@@ -78,7 +78,7 @@ export default function SelectedSessionPage({ selectedSeats, handleSeat, nome, s
                     }
                     else {
                         return (
-                            <NoSeat key={el.id} onClick={notAvailable}>
+                            <NoSeat data-test="seat" key={el.id} onClick={notAvailable}>
                                 {el.name}
                             </NoSeat>
                         )
@@ -105,6 +105,7 @@ export default function SelectedSessionPage({ selectedSeats, handleSeat, nome, s
                     <DivInput>
                         <label htmlFor="nome">Nome do comprador:</label>
                         <input
+                            data-test="client-name"
                             placeholder="Digite seu nome..."
                             type="text"
                             id="nome"
@@ -115,6 +116,7 @@ export default function SelectedSessionPage({ selectedSeats, handleSeat, nome, s
                     <DivInput>
                         <label htmlFor="cpf">CPF do comprador:</label>
                         <input
+                            data-test="client-cpf"
                             placeholder="Digite seu CPF..."
                             type="text"
                             id="cpf"
@@ -122,14 +124,14 @@ export default function SelectedSessionPage({ selectedSeats, handleSeat, nome, s
                             onChange={(e) => setCpf(e.target.value)}
                             required />
                     </DivInput>
-                    <button type="submit">
+                    <button data-test="book-seat-btn" type="submit">
                         Reservar Assento(s)
                     </button>
                 </form>
             </Form>
 
         </Conteiner>
-        <Footer>
+        <Footer data-test="footer">
             <FooterImage>
                 <img src={seats.movie.posterURL} />
             </FooterImage>

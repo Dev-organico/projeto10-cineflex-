@@ -34,14 +34,14 @@ export default function SelectedMoviePage() {
             <Sessions>
                 {sessions.days.map(el => (
 
-                    <Session key={el.id}>
+                    <Session data-test="movie-day" key={el.id}>
                         <Day>
                             <p>{`${el.weekday} - ${el.date}`}</p>
                         </Day>
                         <SessionTime>
                         {el.showtimes.map(i => (
-                            <Link key={i.id} style={{textDecoration: 'none'}} to={`/SelectedSessionPage/${i.id}`}>
-                                <Button>{i.name}</Button>
+                            <Link key={i.id} style={{textDecoration: 'none'}} to={`/SelectedSessionPage/${i.id}`} data-test="showtime">
+                                <Button >{i.name}</Button>
                             </Link>
                         ))}
                         </SessionTime>
@@ -49,7 +49,7 @@ export default function SelectedMoviePage() {
                 )
                 )}
             </Sessions>
-            <Footer>
+            <Footer data-test="footer">
                 <FooterImage>
                     <img src={sessions.posterURL} />
                 </FooterImage>
