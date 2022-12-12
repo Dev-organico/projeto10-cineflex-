@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import MoviesPage from "../pages/MoviesPage";
+import MoviesPage from "../pages/moviesPage";
 import GlobalStyles from "../GlobalStyles";
 import Header from "./Header";
-import SelectedMoviePage from "../pages/SelectedMoviePage";
-import SelectedSessionPage from "../pages/SelectedSessionPage";
+import SelectedMoviePage from "../pages/selectedMoviePage";
+import SelectedSessionPage from "../pages/selectedSessionPage";
 import { useState } from "react";
-import SuccessPage from "../pages/SuccessPage";
+import SuccessPage from "../pages/successPage";
 
 function App() {
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -17,7 +17,7 @@ function App() {
   const [movieTitle , setMovieTitle] = useState("")
   const [movieDay , setMovieDay] = useState("")
   const [movieTime , setMovieTime] = useState("")
-  const [finalInfo, setFinalInfo] = useState([])
+  
 
   function handleSeat(seat){
 
@@ -39,10 +39,11 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<MoviesPage />} /> 
-        <Route path="/SelectedMoviePage/:movieId" element={<SelectedMoviePage/>}/>
+        <Route path="/selectedMoviePage/:movieId" element={<SelectedMoviePage/>}/>
         <Route 
-        path="/SelectedSessionPage/:showtimesId" 
-        element={<SelectedSessionPage selectedSeats = {selectedSeats}
+        path="/selectedSessionPage/:showtimesId" 
+        element={<SelectedSessionPage 
+        selectedSeats = {selectedSeats}
         handleSeat = {handleSeat}
         nome = {nome}
         setNome = {setNome}
@@ -56,7 +57,7 @@ function App() {
         setMovieTime = {setMovieTime}
         />} 
         />
-        <Route path="/SuccessPage" element={<SuccessPage
+        <Route path="/successPage" element={<SuccessPage
         seatsName = {seatsName}
         movieTitle = {movieTitle}
         movieDay = {movieDay}
