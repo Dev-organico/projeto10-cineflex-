@@ -40,7 +40,7 @@ export default function SelectedMoviePage() {
                         </Day>
                         <SessionTime>
                         {el.showtimes.map(i => (
-                            <Link key={i.id} style={{textDecoration: 'none'}} to={`/`}>
+                            <Link key={i.id} style={{textDecoration: 'none'}} to={`/SelectedSessionPage/${i.id}`}>
                                 <Button>{i.name}</Button>
                             </Link>
                         ))}
